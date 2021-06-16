@@ -90,15 +90,15 @@ hint: the strings returned need to exactly match the string in step 4.
 
 function getWinnersByYear(data, getYearsCB, getWinnersCB) {
     let winnersByYear = [];
-    let years = getYearsCB(data);
-    let winners = getWinnersCB(data);
+    let years = getYearsCB(data, getFinals);
+    let winners = getWinnersCB(data, getFinals);
     for(let i=0;i<years.length;i++){
-        winnersByYear.push(`In ${this.years[i]}, ${this.winners[i]} won the world cup`)
+        winnersByYear.push(`In ${years[i]}, ${winners[i]} won the world cup!`)
     }
     return winnersByYear;
 }
-// getWinnersByYear(fifaData,getFinals, getWinners);
-
+getWinnersByYear(fifaData, getYears, getWinners);
+/*This is throwing a major error, that myself, and many others are having, where when calling task 3, getYears, it says that getFinals is not a function, which is incorrect. In the QA we were all unable to get this to work, and had to suffice with just not having it break NPM.
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
